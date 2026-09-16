@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Ethera</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+ <header class="site-header">
+    <div class="header-inner">
+
+       <a href="#inicio" class="pe-brand" aria-label="Pixel Ethera">
+    <span class="pe-symbol" aria-hidden="true">
+        <span class="pe-letter p">P</span>
+        <span class="pe-letter e">E</span>
+
+    <span class="pe-brand-name">
+    <strong>
+        <span class="pixel-word">Pixel</span>
+        <span class="ethera-word">Ethera</span>
+    </strong>
+    <small class="brand-slogan">CRIANDO UNIVERSOS ATRAVÉS DA ARTE E DO SOFTWARE</small>
+</span>
+
+        <nav class="main-nav">
+            <a href="#inicio">Início</a>
+            <a href="#destaques">Destaques</a>
+            <a href="#espacos">Espaços</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="header-button primary"
+                    onclick="openSellModal()"
+                    type="button">
+                + Criar &amp; Vender
+            </button>
+
+            <button class="header-button"
+                    onclick="openLoginModal()"
+                    type="button">
+                Entrar
+            </button>
+        </div>
+
+    </div>
+</header>
+
+
+<main>
+
+<section class="hero" id="inicio">
+    <div class="hero-inner">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                PIXEL ETHERA
+            </div>
+
+            <h1>
+                Arte digital para encontrar,
+                descobrir e comprar.
+            </h1>
+
+            <p>
+                Um espaço para artistas apresentarem
+                suas criações digitais e para pessoas
+                encontrarem obras que querem levar consigo.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-button"
+                        onclick="document.getElementById('destaques').scrollIntoView()"
+                        type="button">
+                    Explorar obras
+                </button>
+
+                <button class="secondary-button"
+                        onclick="openSellModal()"
+                        type="button">
+                    Publicar minha arte
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="featured-section" id="destaques">
+
+    <div class="section-inner">
+
+        <div class="featured-header">
+
+            <div class="section-label">
+                EM DESTAQUE
+            </div>
+
+            <h2 class="section-title">
+                Obras que estão passando por aqui
+            </h2>
+
+        </div>
+
+        <div id="featured-artworks"
+             class="featured-container">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="spaces-section" id="espacos">
+
+    <div class="section-inner">
+
+        <div class="spaces-header">
+
+            <div class="section-label">
+                EXPLORE
+            </div>
+
+            <h2 class="section-title">
+                Escolha um espaço
+            </h2>
+
+            <p class="section-description">
+                Encontre diferentes tipos de arte digital
+                dentro do Pixel Ethera.
+            </p>
+
+        </div>
+
+        <div class="spaces-grid">
+
+            <a href="#galeria"
+               class="space-card"
+               onclick="filterSpace('Ethera')">
+
+                <small>
+                    ✦ DESENHOS
+                </small>
+
+                <h3>
+                    Espaço Ethera
+                </h3>
+
+                <p>
+                    Desenhos, ilustrações e outras
+                    criações digitais.
+                </p>
+
+                <span>
+                    Ver obras →
+                </span>
+
+            </a>
+
+
+            <a href="#galeria"
+               class="space-card pixel"
+               onclick="filterSpace('Pixel Dreams')">
+
+                <small>
+                    ▦ PIXEL ART
+                </small>
+
+                <h3>
+                    Pixel Dreams
+                </h3>
+
+                <p>
+                    Um espaço dedicado exclusivamente
+                    à pixel art.
+                </p>
+
+                <span>
+                    Ver obras →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="gallery-section" id="galeria">
+
+    <div class="section-inner">
+
+        <div class="gallery-header">
+
+            <div>
+
+                <div class="section-label">
+                    GALERIA
+                </div>
+
+                <h2 class="section-title">
+                    Descubra obras
+                </h2>
+
+            </div>
+<div class="gallery-tools">
+
+    <div class="search-box">
+        <span>⌕</span>
+
+        <input
+            id="artwork-search"
+            type="search"
+            placeholder="Buscar obra ou artista..."
+            autocomplete="off"
+        >
+    </div>
+
+    <div class="filters">
+
+        <button
+            class="filter-button active"
+            onclick="filterSpace('Todos')"
+            type="button">
+            Todas
+        </button>
+
+        <button
+            class="filter-button"
+            onclick="filterSpace('Ethera')"
+            type="button">
+            Ethera
+        </button>
+
+        <button
+            class="filter-button"
+            onclick="filterSpace('Pixel Dreams')"
+            type="button">
+            Pixel Dreams
+        </button>
+
+    </div>
+
+</div>
+
+        <div id="gallery-grid"
+             class="gallery">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="artist-profile-section">
+
+    <div class="section-inner">
+
+        <div class="artist-profile-card">
+
+            <div class="artist-avatar">
+                <span>PE</span>
+            </div>
+
+            <div class="artist-profile-info">
+
+                <div class="section-label">
+                    SEU ESPAÇO COMO ARTISTA
+                </div>
+
+                <h2>
+                    Mostre quem criou a obra.
+                </h2>
+
+                <p>
+                    Crie seu perfil dentro do Pixel Ethera,
+                    reúna suas obras e conte um pouco
+                    sobre seu trabalho.
+                </p>
+
+                <button class="primary-button"
+                        onclick="openArtistProfile()"
+                        type="button">
+                    Criar meu perfil
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="artist-page" id="artist-page">
+
+    <div class="section-inner">
+
+        <button class="artist-back-button"
+                onclick="closeArtistPage()"
+                type="button">
+            ← Voltar para a galeria
+        </button>
+
+        <div class="artist-page-header">
+
+            <div class="artist-page-avatar">
+                <span id="artist-page-initials">
+                    PE
+                </span>
+            </div>
+
+            <div class="artist-page-info">
+
+                <div class="section-label"
+                     id="artist-page-space">
+                    PIXEL ETHERA
+                </div>
+
+                <h2 id="artist-page-name">
+                    Artista
+                </h2>
+
+                <p id="artist-page-bio">
+                    Este artista ainda não adicionou
+                    uma biografia.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="artist-page-divider"></div>
+
+        <div class="artist-page-works-header">
+
+            <div>
+
+                <div class="section-label">
+                    PORTFÓLIO
+                </div>
+
+                <h3>
+                    Obras deste artista
+                </h3>
+
+            </div>
+
+        </div>
+
+        <div id="artist-page-works"
+             class="gallery">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about-section" id="sobre">
+
+    <div class="section-inner about-inner">
+
+        <div class="section-label">
+            SOBRE O PIXEL ETHERA
+        </div>
+
+        <h2>
+            Um lugar feito para a arte digital.
+        </h2>
+
+        <p>
+            O Pixel Ethera reúne artistas e compradores
+            em uma plataforma dedicada à descoberta
+            e comercialização de obras digitais.
+        </p>
+
+        <p>
+            Aqui, cada criação pode encontrar seu público.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- PERFIL / CONTA -->
+
+<div id="artist-profile-modal"
+     class="modal-overlay">
+
+    <div class="modal">
+
+        <button class="modal-close"
+                onclick="closeArtistProfile()"
+                type="button">
+            ×
+        </button>
+
+        <div class="section-label">
+            PIXEL ETHERA
+        </div>
+
+        <h2>
+            SEU PERFIL
+        </h2>
+
+        <p class="modal-intro">
+            Crie ou atualize seu espaço como artista.
+        </p>
+
+        <form id="artist-profile-form"
+              >
+
+            <div class="form-group">
+
+                <label for="artist-profile-name">
+                    Nome artístico
+                </label>
+
+                <input id="artist-profile-name"
+                       name="name"
+                       type="text"
+                       placeholder="Digite seu nome artístico"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="artist-profile-bio">
+                    Biografia
+                </label>
+
+                <textarea id="artist-profile-bio"
+                          name="bio"
+                          rows="5"
+                          placeholder="Conte um pouco sobre você e sua arte."></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="artist-profile-space">
+                    Espaço principal
+                </label>
+
+                <select id="artist-profile-space"
+                        name="space"
+                        required>
+
+                    <option value="">
+                        Escolha um espaço
+                    </option>
+
+                    <option value="Ethera">
+                        Ethera
+                    </option>
+
+                    <option value="Pixel Dreams">
+                        Pixel Dreams
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit"
+                    class="primary-button full-button">
+                Salvar perfil
+            </button>
+
+        </form>
+
+        <div class="connect-panel">
+            <div class="section-label">
+                RECEBIMENTOS
+            </div>
+            <p id="connect-status">Configure sua conta para receber 95% de cada venda.</p>
+            <button id="connect-button"
+                    class="secondary-button full-button"
+                    type="button">
+                Configurar recebimentos
+            </button>
+        </div>
+
+        <div class="my-artworks-panel">
+            <div class="section-label">
+                SUAS OBRAS
+            </div>
+            <div id="my-artworks-list" class="my-artworks-list">
+                <p class="empty-gallery">Carregando suas obras...</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PUBLICAR OBRA -->
+
+<div id="sell-modal"
+     class="modal-overlay">
+
+    <div class="modal">
+
+        <button class="modal-close"
+                onclick="closeSellModal()"
+                type="button">
+            ×
+        </button>
+
+        <div class="section-label">
+            PIXEL ETHERA
+        </div>
+
+        <h2>
+            PUBLICAR OBRA
+        </h2>
+
+        <p class="modal-intro">
+            Apresente sua arte no Pixel Ethera.
+        </p>
+
+        <form id="sell-form">
+
+            <div class="form-group">
+
+                <label for="title">
+                    Título da obra
+                </label>
+
+                <input id="title"
+                       name="title"
+                       type="text"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="space">
+                    Espaço
+                </label>
+
+                <select id="space"
+                        name="space"
+                        required>
+
+                    <option value="">
+                        Escolha um espaço
+                    </option>
+
+                    <option value="Ethera">
+                        Ethera
+                    </option>
+
+                    <option value="Pixel Dreams">
+                        Pixel Dreams
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="price">
+                    Preço
+                </label>
+
+                <input id="price"
+                       name="price"
+                       type="number"
+                       min="1"
+                       max="1000000"
+                       step="0.01"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="image">
+                    Imagem da obra
+                </label>
+
+                <input id="image"
+                       name="image"
+                       type="file"
+                       accept="image/png,image/jpeg,image/gif,image/webp"
+                       required>
+
+                 <img id="image-preview"
+                     class="image-preview"
+                     alt="Pré-visualização da obra"
+                     hidden>
+
+            </div>
+
+
+            <button type="submit"
+                    class="primary-button full-button">
+                Publicar obra
+            </button>
+
+            <button id="cancel-edit-button"
+                    class="secondary-button full-button"
+                    type="button"
+                    hidden>
+                Cancelar edição
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- LOGIN -->
+
+<div id="login-modal"
+     class="modal-overlay">
+
+    <div class="modal">
+
+        <button class="modal-close"
+                onclick="closeLoginModal()"
+                type="button">
+            ×
+        </button>
+
+        <div class="section-label">
+            PIXEL ETHERA
+        </div>
+
+        <h2>
+            Entrar
+        </h2>
+
+        <p class="modal-intro">
+            Acesse sua conta.
+        </p>
+
+          <form id="login-form">
+
+            <div class="form-group">
+
+                <label for="login-email">
+                    E-mail
+                </label>
+
+                <input id="login-email"
+                       name="email"
+                       type="email"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="login-password">
+                    Senha
+                </label>
+
+                <input id="login-password"
+                       name="password"
+                       type="password"
+                       required>
+
+            </div>
+
+
+            <button type="submit"
+                    class="primary-button full-button">
+                Entrar
+            </button>
+
+        </form>
+
+        <p class="login-create">
+            Ainda não tem uma conta?
+
+            <button class="text-button"
+                    onclick="closeLoginModal(); openRegisterModal()"
+                    type="button">
+                Criar conta
+            </button>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- CADASTRO -->
+
+<div id="register-modal"
+     class="modal-overlay">
+
+    <div class="modal">
+
+        <button class="modal-close"
+                onclick="closeRegisterModal()"
+                type="button">
+            ×
+        </button>
+
+        <div class="section-label">
+            PIXEL ETHERA
+        </div>
+
+        <h2>
+            Criar conta
+        </h2>
+
+        <p class="modal-intro">
+            Comece a publicar e acompanhar suas obras.
+        </p>
+
+        <form id="register-form">
+
+            <div class="form-group">
+                <label for="register-name">Nome artístico</label>
+                <input id="register-name" name="name" type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label for="register-email">E-mail</label>
+                <input id="register-email" name="email" type="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="register-password">Senha</label>
+                <input id="register-password" name="password" type="password" minlength="6" required>
+            </div>
+
+            <button type="submit" class="primary-button full-button">
+                Criar conta
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- COMPRA -->
+
+<div id="buy-modal"
+     class="modal-overlay">
+
+    <div class="modal purchase-modal">
+
+        <button class="modal-close"
+                onclick="closeBuyModal()"
+                type="button">
+            ×
+        </button>
+
+        <div class="purchase-header">
+
+            <div class="section-label">
+                PIXEL ETHERA
+            </div>
+
+            <h2>
+                Finalizar compra
+            </h2>
+
+            <p class="purchase-subtitle">
+                Revise os detalhes da obra antes de continuar.
+            </p>
+
+        </div>
+
+
+        <div class="purchase-artwork">
+
+            <div class="purchase-artwork-image">
+
+                <img id="buy-art-image"
+                     src=""
+                     alt="">
+
+            </div>
+
+            <div class="purchase-artwork-info">
+
+                <span class="purchase-space"
+                      id="buy-art-space">
+                    PIXEL ETHERA
+                </span>
+
+                <h3 id="buy-art-title">
+                    Obra
+                </h3>
+
+                <p class="purchase-artist">
+                    por
+                    <strong id="buy-art-artist"></strong>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="purchase-summary">
+
+            <div class="purchase-summary-title">
+                Resumo da compra
+            </div>
+
+            <div class="purchase-row">
+                <span>Obra digital</span>
+                <strong id="buy-art-summary">
+                    Obra
+                </strong>
+            </div>
+
+            <div class="purchase-row">
+                <span>Espaço</span>
+                <strong id="buy-art-space-summary">
+                    —
+                </strong>
+            </div>
+
+            <div class="purchase-divider"></div>
+
+            <div class="purchase-total">
+                <span>Total</span>
+                <strong id="buy-art-price">
+                    R$ 0,00
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="purchase-notice">
+
+            <span class="purchase-notice-icon">
+                ✓
+            </span>
+
+            <p>
+                Esta é uma obra digital.
+                A compra será processada pelo Pixel Ethera.
+            </p>
+
+        </div>
+
+
+        <button class="primary-button full-button purchase-button"
+                onclick="demoPurchase()"
+                type="button">
+            Continuar para confirmação
+        </button>
+
+        <button class="purchase-cancel"
+                onclick="closeBuyModal()"
+                type="button">
+            Voltar
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                PE
+            </div>
+
+            <strong>
+                Pixel Ethera
+            </strong>
+
+        </div>
+
+        <p>&copy; Since 2026 - Todos os direitos reservados.</p>
+
+        <div class="footer-text">
+            Arte digital, descoberta e criação.
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="/static/script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: pixel-ethera
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT src.pixel_ethera.app:app
+    envVars:
+      - key: MP_CLIENT_ID
+        sync: false
+      - key: MP_CLIENT_SECRET
+        sync: false
+      - key: MP_REDIRECT_URI
+        sync: false
+      - key: MP_WEBHOOK_SECRET
+        sync: false
+      - key: FLASK_SECRET_KEY
+        sync: false
